@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CC Contrast Terminal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-noise"></div>
+  <div class="scanlines"></div>
+
+  <main class="screen-shell">
+    <header class="top-bar">
+      <div class="brand-wrap">
+        <span class="pixel-dot"></span>
+        <h1>CCTV</h1>
+      </div>
+      <div class="top-status">
+        <span>EXPO MODE</span>
+        <span>v1.0</span>
+      </div>
+    </header>
+
+    <section class="window-grid">
+      <aside class="side-panel left-panel">
+        <div class="mini-window">
+          <div class="mini-title">SYSTEM</div>
+          <div class="mini-content">
+            <p>BOOT: OK</p>
+            <p>DISPLAY: ACTIVE</p>
+            <p>BRAND: CC CONTRAST</p>
+            <p>MODE: RANDOMIZER</p>
+          </div>
+        </div>
+
+        <div class="mini-window">
+          <div class="mini-title">LOG</div>
+          <div class="mini-content">
+            <p>&gt; waiting for input...</p>
+            <p>&gt; press center key</p>
+            <p>&gt; receive random value</p>
+          </div>
+        </div>
+        <div class="mini-window">
+            <div class="mini-title">CONTROL</div>
+            <div class="mini-content">
+                <button class="filter-button" id="scrambleBtn" type="button">
+                SCRAMBLE TIME
+                </button>
+            </div>
+            </div>
+      </aside>
+
+      <section class="main-window">
+        <div class="window-titlebar">
+  <span>Archive</span>
+  <div class="title-buttons">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<div class="hero-screen cctv-layout">
+
+  <div class="media-display cctv-display" id="mediaDisplay"></div>
+
+  <div class="controls">
+    <button class="retro-button" id="generateBtn" type="button">
+      GENERATE
+    </button>
+  </div>
+
+</div>
+      </section>
+
+      <aside class="side-panel right-panel">
+        <div class="mini-window">
+          <div class="mini-title">MEMORY</div>
+          <div class="mini-content">
+            <p>FREE: 382 KB</p>
+            <p>THEME: EXPO DISPLAY</p>
+          </div>
+        </div>
+
+        <div class="mini-window tall">
+            <div class="mini-title">MEDIA FILTERS</div>
+            <div class="mini-content filter-panel">
+                <div class="filter-buttons">
+                <button class="filter-button is-active" type="button" data-type="photo" aria-pressed="true">
+                    PHOTO
+                </button>
+                <button class="filter-button is-active" type="button" data-type="video" aria-pressed="true">
+                    VIDEO
+                </button>
+                <button class="filter-button is-active" type="button" data-type="audio" aria-pressed="true">
+                    AUDIO
+                </button>
+                </div>
+
+                <div class="filter-info">
+                <p>ACTIVE: <span id="selectedTypes">PHOTO + VIDEO + AUDIO</span></p>
+                <p>POOL: <span id="poolCount">0</span></p>
+                </div>
+            </div>
+            </div>
+      </aside>
+    </section>
+
+    <footer class="bottom-bar">
+      <span>CC Contrast Industries</span>
+      <span id="clock">00:00:00</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
