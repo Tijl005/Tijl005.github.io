@@ -6,6 +6,7 @@ const filterButtons = document.querySelectorAll(".filter-button");
 const selectedTypesLabel = document.getElementById("selectedTypes");
 const poolCountLabel = document.getElementById("poolCount");
 const scrambleBtn = document.getElementById("scrambleBtn");
+const VIDEO_BASE_URL = "https://pub-b451e30866da4a9a8921a93d1cf4638d.r2.dev/";
 
 let mediaLibrary = {
   photo: [],
@@ -147,7 +148,13 @@ function generateRandomMedia() {
   console.log("Pool size:", pool.length);
   console.log("Selected file:", selectedFile);
 
-  displayMedia(`media/${selectedFile}`);
+  const extension = selectedFile.split(".").pop().toLowerCase();
+  
+  if (["mp4", "mov"].includes(extension)) {
+    displayMedia(VIDEO_BASE_URL + encodeURIComponent(selectedFile));
+  } else {
+    displayMedia(`media/${selectedFile}`);
+  }
 }
 
 function clearCurrentMedia() {
